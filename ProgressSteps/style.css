@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Moli:ital,wght@0,700;1,400&display=swap');
+
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #f6f7fb;
+    font-family: 'Moli',sans-serif;
+    margin:0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+}
+.container{
+    text-align: center;
+}
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+.progress-container::before{
+    content: '';
+    position: absolute;
+    background-color:  #e0e0e0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    height: 4px;
+    width: 100%;
+}
+.line{
+    position: absolute;
+    background-color: #3498db;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    height: 4px;
+    transition: .4s ease ;
+}
+.num{
+    background-color: #fff;
+    color: #999;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    border-radius: 50%;
+    border: 5px solid #e0e0e0;
+    transition: .4s ease;
+}
+.num.active{
+    border-color: #3498db;
+}
+
+.btn{
+    background-color: #3498db;
+    color:white;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 5px;
+    font-size: 14px;
+}
+.btn:active{
+    transform:scale(0.98) ;
+}
+.btn:disabled{
+    cursor:not-allowed;
+    background-color: #e0e0e0;
+}
+
