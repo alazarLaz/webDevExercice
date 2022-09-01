@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Muli',sans-serif;
+    margin:0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+    background-color: #eeeeee;
+}
+.container{
+    border: grey 1px solid;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1),0px 5px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    width: 500px;
+    height: 100px;
+    position: relative;
+    transition: width 0.9s ease-in-out;
+}
+.question{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 18px;
+    font-weight: 100;
+}
+.expand{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: ghostwhite;
+    border: none;
+}
+.answer{
+    display: none;
+}
+.container.expanded{
+    background-color: #fff;
+    overflow: hidden;
+}
+.container.expanded::before,
+.container.expanded::after{
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    color: #2ecc71;
+    font-size: 7rem;
+    position: absolute;
+    opacity: 0.2;
+    z-index: 0;
+    top: 20px;
+    left: 20px;
+}
+.container.expanded::before
+{
+    color: #3498db;
+    top: -10px;
+    left: -30px;
+    transform: rotateY(180deg);
+}
+
+.container.expanded .answer{
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 14px;
+    font-weight: 100;
+}
+.container.expanded{
+    height: 150px;
+}
+.container.expanded .chevron{
+    display: none;
+}
+.container .times{
+    display: none;
+}
+.container.expanded .times{
+    display: inline;
+}
